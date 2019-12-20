@@ -4,6 +4,7 @@
 #include <string>
 
 #include "Days/Day1/Day1.h"
+#include "Days/Day2/Day2.h"
 
 int main(int argc, char *argv[]) {
   char option;
@@ -42,6 +43,9 @@ int main(int argc, char *argv[]) {
   if (d == 1) {
     Day1 day1(f);
     solution = day1.solve(p, q);
+  } else if (d == 2) {
+    Day2 day2(f);
+    solution = day2.solve(p, q);
   }
 
   if (std::holds_alternative<int>(solution)) {
