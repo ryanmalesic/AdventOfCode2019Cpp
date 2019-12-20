@@ -6,6 +6,7 @@
 #include "Days/Day1/Day1.h"
 #include "Days/Day2/Day2.h"
 #include "Days/Day3/Day3.h"
+#include "Days/Day4/Day4.h"
 
 int main(int argc, char *argv[]) {
   char option;
@@ -50,6 +51,9 @@ int main(int argc, char *argv[]) {
   } else if (d == 3) {
     Day3 day3(f);
     solution = day3.solve(p, q);
+  } else if (d == 4) {
+    Day4 day4(f);
+    solution = day4.solve(p, q);
   }
 
   if (std::holds_alternative<int>(solution)) {
