@@ -21,7 +21,7 @@ class IntCodeComputer {
   IntCodeComputer();
 
   int64_t accessMemory(size_t);
-  int64_t output();
+  std::deque<int64_t> output();
   IntCodeComputer& execute();
   IntCodeComputer& input(const std::vector<int64_t>&);
   IntCodeComputer& replaceProgramData(

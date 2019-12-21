@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 #include <unordered_map>
 #include <vector>
 
@@ -21,7 +22,7 @@ int64_t IntCodeComputer::accessMemory(size_t index) {
   return this->program[index];
 }
 
-int64_t IntCodeComputer::output() { return this->outStream.back(); }
+std::deque<int64_t> IntCodeComputer::output() { return this->outStream; }
 
 IntCodeComputer &IntCodeComputer::execute() {
   this->state = executing;
@@ -46,11 +47,12 @@ IntCodeComputer &IntCodeComputer::execute() {
         delete[] args;
         break;
       case 3:
-        args = this->getArgs(1);
-        if (!this->inStream.empty()) {
+        if (this->inStream.empty()) {
           this->state = waitingOnInput;
           return *this;
         }
+
+        args = this->getArgs(1);
         *args[0] = this->inStream.front();
         this->inStream.pop_front();
         this->instructionPointer += 2;
