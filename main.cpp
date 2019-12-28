@@ -8,6 +8,7 @@
 #include "Days/Day3/Day3.h"
 #include "Days/Day4/Day4.h"
 #include "Days/Day5/Day5.h"
+#include "Days/Day6/Day6.h"
 
 int main(int argc, char *argv[]) {
   char option;
@@ -58,6 +59,9 @@ int main(int argc, char *argv[]) {
   } else if (d == 5) {
     Day5 day5(f);
     solution = day5.solve(p, q);
+  } else if (d == 6) {
+    Day6 day6(f);
+    solution = day6.solve(p, q);
   }
 
   if (std::holds_alternative<int>(solution)) {
