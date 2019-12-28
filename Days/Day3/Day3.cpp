@@ -6,15 +6,14 @@
 
 #include <fstream>
 #include <sstream>
-#include <string>
 
 #include "../../SpaceshipComponents/FuelManagementSystem/FuelManagementSystem.h"
 
-void Day3::parse(std::string inputFile) {
+Day3::Day3(const std::string& inputFile) : Day(inputFile) {
+  wires_t parsedInput;
+
   std::ifstream inputStream(inputFile);
   std::string line;
-
-  wires_t wires;
 
   size_t index = 0;
   while (getline(inputStream, line, '\n')) {
@@ -22,25 +21,23 @@ void Day3::parse(std::string inputFile) {
     std::string element;
     while (getline(elementStream, element, ',')) {
       if (index == 0) {
-        wires.first.push_back(element);
+        parsedInput.first.push_back(element);
       } else {
-        wires.second.push_back(element);
+        parsedInput.second.push_back(element);
       }
     }
     ++index;
   }
 
-  this->input = wires;
+  this->parsedInput = parsedInput;
 }
 
 int Day3::part1() {
-  this->parse(this->inputFile);
-  FuelManagementSystem fuelManagementSystem(input);
+  FuelManagementSystem fuelManagementSystem(parsedInput);
   return fuelManagementSystem.getClosetIntersection();
 }
 
 int Day3::part2() {
-  this->parse(this->inputFile);
-  FuelManagementSystem fuelManagementSystem(input);
+  FuelManagementSystem fuelManagementSystem(parsedInput);
   return fuelManagementSystem.getMinSteps();
 }

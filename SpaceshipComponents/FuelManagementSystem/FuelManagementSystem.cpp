@@ -6,7 +6,6 @@
 
 #include <numeric>
 #include <unordered_map>
-#include <vector>
 
 FuelManagementSystem::FuelManagementSystem(const wires_t& wires) {
   this->wire1 = wires.first;

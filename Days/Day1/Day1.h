@@ -8,16 +8,16 @@
 #include <string>
 #include <vector>
 
+#include "../../SpaceshipComponents/FuelCounterUpper/FuelCounterUpper.h"
 #include "../Day/Day.h"
 
 class Day1 : public Day {
  public:
-  using Day::Day;
+  explicit Day1(const std::string& inputFile);
 
  private:
-  std::vector<int> input;
+  modules_t parsedInput;
 
-  void parse(std::string inputFile) override;
   int part1() override;
   int part2() override;
 };

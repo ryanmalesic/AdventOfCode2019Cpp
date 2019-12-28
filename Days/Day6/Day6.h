@@ -13,12 +13,11 @@
 
 class Day6 : public Day {
  public:
-  using Day::Day;
+  explicit Day6(const std::string& inputFile);
 
  private:
-  orbits_t input;
+  orbits_t parsedInput;
 
-  void parse(std::string inputFile) override;
   int part1() override;
   int part2() override;
 };

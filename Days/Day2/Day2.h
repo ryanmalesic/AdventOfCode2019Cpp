@@ -7,16 +7,16 @@
 
 #include <vector>
 
+#include "../../SpaceshipComponents/IntCodeComputer/IntCodeComputer.h"
 #include "../Day/Day.h"
 
 class Day2 : public Day {
  public:
-  using Day::Day;
+  explicit Day2(const std::string& inputFile);
 
  private:
-  std::vector<int64_t> input;
+  program_t parsedInput;
 
-  void parse(std::string inputFile) override;
   int part1() override;
   int part2() override;
 };

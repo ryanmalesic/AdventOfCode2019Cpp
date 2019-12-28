@@ -4,9 +4,6 @@
 
 #include "Day.h"
 
-#include <string>
-#include <variant>
-
 Day::Day(std::string inputFile) : inputFile(std::move(inputFile)) {}
 
 std::variant<int, std::pair<int, int>> Day::solve(bool part1, bool part2) {

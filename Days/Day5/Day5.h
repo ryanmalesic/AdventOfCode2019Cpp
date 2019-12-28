@@ -11,12 +11,11 @@
 
 class Day5 : public Day {
  public:
-  using Day::Day;
+  explicit Day5(const std::string& inputFile);
 
  private:
-  std::vector<int64_t> input;
+  std::vector<int64_t> parsedInput;
 
-  void parse(std::string inputFile) override;
   int part1() override;
   int part2() override;
 };

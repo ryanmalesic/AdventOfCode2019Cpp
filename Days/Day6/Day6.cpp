@@ -6,28 +6,29 @@
 
 #include <fstream>
 #include <iostream>
-#include <string>
 
 #include "../../SpaceshipComponents/OrbitMap/OrbitMap.h"
 
-void Day6::parse(std::string inputFile) {
+Day6::Day6(const std::string& inputFile) : Day(inputFile) {
+  orbits_t parsedInput;
+
   std::ifstream inputStream(inputFile);
   std::string inputString;
   const char delim = '\n';
 
   while (getline(inputStream, inputString, delim)) {
-    this->input.push_back(inputString);
+    parsedInput.push_back(inputString);
   }
+
+  this->parsedInput = parsedInput;
 }
 
 int Day6::part1() {
-  this->parse(this->inputFile);
-  OrbitMap orbitMap = OrbitMap(this->input);
+  OrbitMap orbitMap = OrbitMap(this->parsedInput);
   return orbitMap.getOrbitCountChecksum();
 }
 
 int Day6::part2() {
-  this->parse(this->inputFile);
-  OrbitMap orbitMap = OrbitMap(this->input);
+  OrbitMap orbitMap = OrbitMap(this->parsedInput);
   return orbitMap.getMinStepsToSanta();
 }

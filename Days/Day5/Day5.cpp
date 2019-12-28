@@ -5,29 +5,26 @@
 #include "Day5.h"
 
 #include <fstream>
-#include <vector>
 
 #include "../../SpaceshipComponents/IntCodeComputer/IntCodeComputer.h"
 
-void Day5::parse(std::string inputFile) {
-  std::vector<int64_t> input;
+Day5::Day5(const std::string& inputFile) : Day(inputFile) {
+  std::vector<int64_t> parsedInput;
 
   std::ifstream inputStream(inputFile);
   std::string inputString;
   const char delim = ',';
 
   while (getline(inputStream, inputString, delim)) {
-    input.push_back(stoi(inputString));
+    parsedInput.push_back(stoi(inputString));
   }
 
-  this->input = input;
+  this->parsedInput = parsedInput;
 }
 
 int Day5::part1() {
-  this->parse(this->inputFile);
-
   IntCodeComputer intCodeComputer;
-  return intCodeComputer.useProgram(this->input)
+  return intCodeComputer.useProgram(this->parsedInput)
       .input({1})
       .execute()
       .output()
@@ -35,10 +32,8 @@ int Day5::part1() {
 }
 
 int Day5::part2() {
-  this->parse(this->inputFile);
-
   IntCodeComputer intCodeComputer;
-  return intCodeComputer.useProgram(this->input)
+  return intCodeComputer.useProgram(this->parsedInput)
       .input({5})
       .execute()
       .output()

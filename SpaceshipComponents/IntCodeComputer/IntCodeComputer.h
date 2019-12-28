@@ -9,6 +9,10 @@
 #include <unordered_map>
 #include <vector>
 
+typedef int64_t memory_t;
+typedef std::vector<int64_t> program_t;
+typedef std::deque<int64_t> stream_t;
+
 enum intCodeComputerState {
   notExecuted,
   executing,
@@ -20,20 +24,20 @@ class IntCodeComputer {
  public:
   IntCodeComputer();
 
-  int64_t accessMemory(size_t);
-  std::deque<int64_t> output();
+  memory_t accessMemory(size_t);
+  stream_t output();
   IntCodeComputer& execute();
-  IntCodeComputer& input(const std::vector<int64_t>&);
+  IntCodeComputer& input(const program_t&);
   IntCodeComputer& replaceProgramData(
       const std::unordered_map<size_t, int64_t>&);
-  IntCodeComputer& useProgram(std::vector<int64_t> program);
+  IntCodeComputer& useProgram(program_t program);
 
  private:
-  std::vector<int64_t> program;
+  program_t program;
   size_t instructionPointer;
   size_t relativeBasePointer;
-  std::deque<int64_t> inStream;
-  std::deque<int64_t> outStream;
+  stream_t inStream;
+  stream_t outStream;
   intCodeComputerState state;
 
   int64_t** getArgs(int);

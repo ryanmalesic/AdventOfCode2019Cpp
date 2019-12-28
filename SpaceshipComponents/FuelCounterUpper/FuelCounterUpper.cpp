@@ -5,9 +5,8 @@
 #include "FuelCounterUpper.h"
 
 #include <numeric>
-#include <vector>
 
-FuelCounterUpper::FuelCounterUpper(std::vector<int> modules)
+FuelCounterUpper::FuelCounterUpper(modules_t modules)
     : modules(std::move(modules)) {}
 
 int FuelCounterUpper::calculateFuelRequirements() {
@@ -27,7 +26,7 @@ int FuelCounterUpper::calculateTotalFuelRequirements() {
 }
 
 int FuelCounterUpper::calculateTotalFuelRequirementForModule(
-    const int &module) {
+    const module_t &module) {
   if (module <= 0) {
     return 0;
   }

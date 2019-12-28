@@ -6,9 +6,6 @@
 
 #include <algorithm>
 #include <cmath>
-#include <iostream>
-#include <unordered_map>
-#include <vector>
 
 IntCodeComputer::IntCodeComputer()
     : program({}),
@@ -22,7 +19,7 @@ int64_t IntCodeComputer::accessMemory(size_t index) {
   return this->program[index];
 }
 
-std::deque<int64_t> IntCodeComputer::output() { return this->outStream; }
+stream_t IntCodeComputer::output() { return this->outStream; }
 
 IntCodeComputer &IntCodeComputer::execute() {
   this->state = executing;
@@ -111,8 +108,7 @@ IntCodeComputer &IntCodeComputer::execute() {
   return *this;
 }
 
-IntCodeComputer &IntCodeComputer::input(
-    const std::vector<int64_t> &inputValues) {
+IntCodeComputer &IntCodeComputer::input(const program_t &inputValues) {
   for (const int64_t &inputValue : inputValues) {
     this->inStream.push_back(inputValue);
   }
@@ -129,7 +125,7 @@ IntCodeComputer &IntCodeComputer::replaceProgramData(
   return *this;
 }
 
-IntCodeComputer &IntCodeComputer::useProgram(std::vector<int64_t> program) {
+IntCodeComputer &IntCodeComputer::useProgram(program_t program) {
   this->program = std::move(program);
 
   return *this;

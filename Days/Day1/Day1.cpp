@@ -5,33 +5,29 @@
 #include "Day1.h"
 
 #include <fstream>
-#include <string>
-#include <vector>
 
 #include "../../SpaceshipComponents/FuelCounterUpper/FuelCounterUpper.h"
 
-void Day1::parse(std::string inputFile) {
-  std::vector<int> input;
+Day1::Day1(const std::string& inputFile) : Day(inputFile) {
+  modules_t parsedInput;
 
   std::ifstream inputStream(inputFile);
   std::string inputString;
   const char delim = '\n';
 
   while (getline(inputStream, inputString, delim)) {
-    input.push_back(stoi(inputString));
+    parsedInput.push_back(stoi(inputString));
   }
 
-  this->input = input;
+  this->parsedInput = parsedInput;
 }
 
 int Day1::part1() {
-  this->parse(this->inputFile);
-  FuelCounterUpper fcu(this->input);
+  FuelCounterUpper fcu(this->parsedInput);
   return fcu.calculateFuelRequirements();
 }
 
 int Day1::part2() {
-  this->parse(this->inputFile);
-  FuelCounterUpper fcu(this->input);
+  FuelCounterUpper fcu(this->parsedInput);
   return fcu.calculateTotalFuelRequirements();
 }

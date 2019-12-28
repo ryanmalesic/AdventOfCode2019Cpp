@@ -5,26 +5,27 @@
 #include "Day4.h"
 
 #include <fstream>
-#include <iostream>
-#include <string>
 
-void Day4::parse(std::string inputFile) {
+Day4::Day4(const std::string& inputFile) : Day(inputFile) {
+  parsedInput = new int[2];
+
   std::ifstream inputStream(inputFile);
   std::string inputString;
   const char delim = '-';
 
   size_t index = 0;
   while (getline(inputStream, inputString, delim)) {
-    this->input[index] = (stoi(inputString));
+    parsedInput[index] = (stoi(inputString));
     ++index;
   }
 }
 
+Day4::~Day4() { delete[] parsedInput; }
+
 int Day4::part1() {
-  this->parse(this->inputFile);
   int count = 0;
 
-  for (int i = this->input[0]; i <= this->input[1]; ++i) {
+  for (int i = this->parsedInput[0]; i <= this->parsedInput[1]; ++i) {
     if (isAscending(i) && hasTwoInARow(i)) {
       ++count;
     }
@@ -34,10 +35,9 @@ int Day4::part1() {
 }
 
 int Day4::part2() {
-  this->parse(this->inputFile);
   int count = 0;
 
-  for (int i = this->input[0]; i <= this->input[1]; ++i) {
+  for (int i = this->parsedInput[0]; i <= this->parsedInput[1]; ++i) {
     if (isAscending(i) && hasOnlyTwoInARow(i)) {
       ++count;
     }

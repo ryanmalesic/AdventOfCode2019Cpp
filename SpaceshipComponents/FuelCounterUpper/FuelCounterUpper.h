@@ -7,17 +7,20 @@
 
 #include <vector>
 
+typedef int module_t;
+typedef std::vector<int> modules_t;
+
 class FuelCounterUpper {
  public:
-  explicit FuelCounterUpper(std::vector<int> modules);
+  explicit FuelCounterUpper(modules_t modules);
 
   int calculateFuelRequirements();
   int calculateTotalFuelRequirements();
 
  private:
-  std::vector<int> modules;
+  modules_t modules;
 
-  int calculateTotalFuelRequirementForModule(const int &module);
+  int calculateTotalFuelRequirementForModule(const module_t &module);
 };
 
 #endif  // ADVENTOFCODE2019_C___FUELCOUNTERUPPER_H
