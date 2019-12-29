@@ -7,6 +7,7 @@
 
 #include <vector>
 
+#include "../../SpaceshipComponents/IntCodeComputer/IntCodeComputer.h"
 #include "../Day/Day.h"
 
 class Day5 : public Day {
@@ -14,7 +15,7 @@ class Day5 : public Day {
   explicit Day5(const std::string& inputFile);
 
  private:
-  std::vector<int64_t> parsedInput;
+  program_t parsedInput;
 
   int part1() override;
   int part2() override;

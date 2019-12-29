@@ -31,6 +31,7 @@ class IntCodeComputer {
   IntCodeComputer& replaceProgramData(
       const std::unordered_map<size_t, int64_t>&);
   IntCodeComputer& useProgram(program_t program);
+  intCodeComputerState getState();
 
  private:
   program_t program;

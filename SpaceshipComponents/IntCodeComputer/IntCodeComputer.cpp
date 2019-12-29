@@ -131,6 +131,8 @@ IntCodeComputer &IntCodeComputer::useProgram(program_t program) {
   return *this;
 }
 
+intCodeComputerState IntCodeComputer::getState() { return this->state; }
+
 int64_t **IntCodeComputer::getArgs(int numberOfArgs) {
   auto **args = new int64_t *[numberOfArgs];
   auto *argValues = new int64_t[numberOfArgs];

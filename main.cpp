@@ -1,7 +1,6 @@
 #include <getopt.h>
 
 #include <iostream>
-#include <string>
 
 #include "Days/Day1/Day1.h"
 #include "Days/Day2/Day2.h"
@@ -9,6 +8,7 @@
 #include "Days/Day4/Day4.h"
 #include "Days/Day5/Day5.h"
 #include "Days/Day6/Day6.h"
+#include "Days/Day7/Day7.h"
 
 int main(int argc, char *argv[]) {
   char option;
@@ -62,6 +62,9 @@ int main(int argc, char *argv[]) {
   } else if (d == 6) {
     Day6 day6(f);
     solution = day6.solve(p, q);
+  } else if (d == 7) {
+    Day7 day7(f);
+    solution = day7.solve(p, q);
   }
 
   if (std::holds_alternative<int>(solution)) {

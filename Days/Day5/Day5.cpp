@@ -6,8 +6,6 @@
 
 #include <fstream>
 
-#include "../../SpaceshipComponents/IntCodeComputer/IntCodeComputer.h"
-
 Day5::Day5(const std::string& inputFile) : Day(inputFile) {
   std::vector<int64_t> parsedInput;
 
