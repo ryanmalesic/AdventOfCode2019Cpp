@@ -18,8 +18,8 @@ class Day3 : public Day {
  private:
   wires_t parsedInput;
 
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 };
 
 #endif  // ADVENTOFCODE2019CPP_DAY3_H

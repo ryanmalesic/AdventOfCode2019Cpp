@@ -23,12 +23,12 @@ Day6::Day6(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day6::part1() {
+int64_t Day6::part1() {
   OrbitMap orbitMap = OrbitMap(this->parsedInput);
   return orbitMap.getOrbitCountChecksum();
 }
 
-int Day6::part2() {
+int64_t Day6::part2() {
   OrbitMap orbitMap = OrbitMap(this->parsedInput);
   return orbitMap.getMinStepsToSanta();
 }

@@ -22,12 +22,12 @@ Day7::Day7(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day7::part1() {
+int64_t Day7::part1() {
   AmplificationCircuit amplificationCircuit(this->parsedInput);
   return amplificationCircuit.amplifyInSeries();
 }
 
-int Day7::part2() {
+int64_t Day7::part2() {
   AmplificationCircuit amplificationCircuit(this->parsedInput);
   return amplificationCircuit.amplifyInLoop();
 }

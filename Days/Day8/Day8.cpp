@@ -22,12 +22,12 @@ Day8::Day8(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day8::part1() {
+int64_t Day8::part1() {
   SpaceImage spaceImage(this->parsedInput, 25, 6);
   return spaceImage.checksum();
 }
 
-int Day8::part2() {
+int64_t Day8::part2() {
   SpaceImage spaceImage(this->parsedInput, 25, 6);
   space_image_t s = spaceImage.decode();
 

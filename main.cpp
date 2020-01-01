@@ -10,6 +10,7 @@
 #include "Days/Day6/Day6.h"
 #include "Days/Day7/Day7.h"
 #include "Days/Day8/Day8.h"
+#include "Days/Day9/Day9.h"
 
 int main(int argc, char *argv[]) {
   char option;
@@ -43,7 +44,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  std::variant<int, std::pair<int, int>> solution;
+  std::variant<int64_t, std::pair<int64_t, int64_t>> solution;
 
   if (d == 1) {
     Day1 day1(f);
@@ -69,12 +70,16 @@ int main(int argc, char *argv[]) {
   } else if (d == 8) {
     Day8 day8(f);
     solution = day8.solve(p, q);
+  } else if (d == 9) {
+    Day9 day9(f);
+    solution = day9.solve(p, q);
   }
 
-  if (std::holds_alternative<int>(solution)) {
-    std::cout << std::get<int>(solution) << std::endl;
+  if (std::holds_alternative<int64_t>(solution)) {
+    std::cout << std::get<int64_t>(solution) << std::endl;
   } else {
-    std::pair<int, int> pair = std::get<std::pair<int, int>>(solution);
+    std::pair<int64_t, int64_t> pair =
+        std::get<std::pair<int64_t, int64_t>>(solution);
     std::cout << "PART 1: " << pair.first << std::endl
               << "PART 2: " << pair.second << std::endl;
   }

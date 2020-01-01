@@ -18,8 +18,8 @@ class Day1 : public Day {
  private:
   modules_t parsedInput;
 
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 };
 
 #endif  // ADVENTOFCODE2019_C___DAY1_H

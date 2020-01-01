@@ -17,8 +17,8 @@ class Day7 : public Day {
  private:
   program_t parsedInput;
 
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 };
 
 #endif  // ADVENTOFCODE2019CPP_DAY7_H

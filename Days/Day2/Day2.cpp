@@ -23,7 +23,7 @@ Day2::Day2(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day2::part1() {
+int64_t Day2::part1() {
   IntCodeComputer icc;
   return icc.useProgram(this->parsedInput)
       .replaceProgramData({{1, 12}, {2, 2}})
@@ -31,7 +31,7 @@ int Day2::part1() {
       .accessMemory(0);
 }
 
-int Day2::part2() {
+int64_t Day2::part2() {
   for (int noun = 0; noun < 100; ++noun) {
     for (int verb = 0; verb < 100; ++verb) {
       IntCodeComputer icc;

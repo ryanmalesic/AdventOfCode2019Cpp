@@ -32,12 +32,12 @@ Day3::Day3(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day3::part1() {
+int64_t Day3::part1() {
   FuelManagementSystem fuelManagementSystem(parsedInput);
   return fuelManagementSystem.getClosetIntersection();
 }
 
-int Day3::part2() {
+int64_t Day3::part2() {
   FuelManagementSystem fuelManagementSystem(parsedInput);
   return fuelManagementSystem.getMinSteps();
 }

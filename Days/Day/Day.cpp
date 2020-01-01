@@ -6,11 +6,12 @@
 
 Day::Day(std::string inputFile) : inputFile(std::move(inputFile)) {}
 
-std::variant<int, std::pair<int, int>> Day::solve(bool part1, bool part2) {
-  std::variant<int, std::pair<int, int>> solution;
+std::variant<int64_t, std::pair<int64_t, int64_t>> Day::solve(bool part1,
+                                                              bool part2) {
+  std::variant<int64_t, std::pair<int64_t, int64_t>> solution;
 
   if (part1 == part2) {
-    solution = std::pair<int, int>{this->part1(), this->part2()};
+    solution = std::pair<int64_t, int64_t>{this->part1(), this->part2()};
   } else if (part1) {
     solution = this->part1();
   } else if (part2) {

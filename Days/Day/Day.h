@@ -12,11 +12,12 @@ class Day {
  public:
   explicit Day(std::string inputFile);
 
-  std::variant<int, std::pair<int, int>> solve(bool part1, bool part2);
+  std::variant<int64_t, std::pair<int64_t, int64_t>> solve(bool part1,
+                                                           bool part2);
 
  private:
-  virtual int part1() = 0;
-  virtual int part2() = 0;
+  virtual int64_t part1() = 0;
+  virtual int64_t part2() = 0;
 
  protected:
   std::string inputFile;

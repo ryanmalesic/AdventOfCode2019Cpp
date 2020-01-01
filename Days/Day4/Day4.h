@@ -17,8 +17,8 @@ class Day4 : public Day {
  private:
   int* parsedInput;
 
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 
   static bool isAscending(const int&);
   static bool hasTwoInARow(const int&);

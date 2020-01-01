@@ -22,7 +22,7 @@ Day4::Day4(const std::string& inputFile) : Day(inputFile) {
 
 Day4::~Day4() { delete[] parsedInput; }
 
-int Day4::part1() {
+int64_t Day4::part1() {
   int count = 0;
 
   for (int i = this->parsedInput[0]; i <= this->parsedInput[1]; ++i) {
@@ -34,7 +34,7 @@ int Day4::part1() {
   return count;
 }
 
-int Day4::part2() {
+int64_t Day4::part2() {
   int count = 0;
 
   for (int i = this->parsedInput[0]; i <= this->parsedInput[1]; ++i) {

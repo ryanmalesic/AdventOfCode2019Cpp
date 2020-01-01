@@ -22,12 +22,12 @@ Day1::Day1(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int Day1::part1() {
+int64_t Day1::part1() {
   FuelCounterUpper fcu(this->parsedInput);
   return fcu.calculateFuelRequirements();
 }
 
-int Day1::part2() {
+int64_t Day1::part2() {
   FuelCounterUpper fcu(this->parsedInput);
   return fcu.calculateTotalFuelRequirements();
 }

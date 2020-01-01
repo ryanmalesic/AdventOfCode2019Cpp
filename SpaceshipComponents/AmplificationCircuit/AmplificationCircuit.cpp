@@ -37,22 +37,22 @@ int AmplificationCircuit::amplifyInLoop() {
   do {
     int64_t input = 0;
 
-    std::vector<IntCodeComputer*> amplifiers = {
-        new IntCodeComputer(), new IntCodeComputer(), new IntCodeComputer(),
-        new IntCodeComputer(), new IntCodeComputer()};
+    std::vector<IntCodeComputer> amplifiers = {
+        IntCodeComputer(), IntCodeComputer(), IntCodeComputer(),
+        IntCodeComputer(), IntCodeComputer()};
 
     for (int i = 0; i < phaseSettings.size(); ++i) {
       amplifiers[i]
-          ->useProgram(amplifierControllerSoftware)
+          .useProgram(amplifierControllerSoftware)
           .input({phaseSettings[i]})
           .execute();
     }
 
-    while (amplifiers[4]->getState() != terminated) {
+    while (amplifiers[4].getState() != terminated) {
       size_t size = amplifiers.size();
 
       for (int i = 0; i < size; ++i) {
-        input = amplifiers[i]->input({input}).execute().output().back();
+        input = amplifiers[i].input({input}).execute().output().back();
       }
 
       max = std::max(max, input);

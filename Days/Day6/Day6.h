@@ -18,8 +18,8 @@ class Day6 : public Day {
  private:
   orbits_t parsedInput;
 
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 };
 
 #endif  // ADVENTOFCODE2019CPP_DAY6_H

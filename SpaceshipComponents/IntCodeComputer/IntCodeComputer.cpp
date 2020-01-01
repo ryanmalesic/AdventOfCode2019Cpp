@@ -127,6 +127,7 @@ IntCodeComputer &IntCodeComputer::replaceProgramData(
 
 IntCodeComputer &IntCodeComputer::useProgram(program_t program) {
   this->program = std::move(program);
+  this->program.resize(this->program.size() + 10000, 0);
 
   return *this;
 }
@@ -155,5 +156,6 @@ int64_t **IntCodeComputer::getArgs(int numberOfArgs) {
     }
   }
 
+  delete[] argValues;
   return args;
 }

@@ -16,8 +16,8 @@ class Day8 : public Day {
 
  private:
   std::vector<int> parsedInput;
-  int part1() override;
-  int part2() override;
+  int64_t part1() override;
+  int64_t part2() override;
 };
 
 #endif  // ADVENTOFCODE2019CPP_DAY8_H

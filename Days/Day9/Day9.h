@@ -1,18 +1,18 @@
 //
-// Created by Ryan Malesic on 12/19/19.
+// Created by Ryan Malesic on 1/1/20.
 //
 
-#ifndef ADVENTOFCODE2019CPP_DAY2_H
-#define ADVENTOFCODE2019CPP_DAY2_H
+#ifndef ADVENTOFCODE2019CPP_DAY9_H
+#define ADVENTOFCODE2019CPP_DAY9_H
 
 #include <vector>
 
 #include "../../SpaceshipComponents/IntCodeComputer/IntCodeComputer.h"
 #include "../Day/Day.h"
 
-class Day2 : public Day {
+class Day9 : public Day {
  public:
-  explicit Day2(const std::string& inputFile);
+  explicit Day9(const std::string& inputFile);
 
  private:
   program_t parsedInput;
@@ -21,4 +21,4 @@ class Day2 : public Day {
   int64_t part2() override;
 };
 
-#endif  // ADVENTOFCODE2019CPP_DAY2_H
+#endif  // ADVENTOFCODE2019CPP_DAY9_H

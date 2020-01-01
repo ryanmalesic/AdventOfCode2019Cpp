@@ -1,12 +1,13 @@
 //
-// Created by Ryan Malesic on 12/20/19.
+// Created by Ryan Malesic on 1/1/20.
 //
 
-#include "Day5.h"
+#include "Day9.h"
 
 #include <fstream>
+#include <iostream>
 
-Day5::Day5(const std::string& inputFile) : Day(inputFile) {
+Day9::Day9(const std::string& inputFile) : Day(inputFile) {
   std::vector<int64_t> parsedInput;
 
   std::ifstream inputStream(inputFile);
@@ -20,7 +21,7 @@ Day5::Day5(const std::string& inputFile) : Day(inputFile) {
   this->parsedInput = parsedInput;
 }
 
-int64_t Day5::part1() {
+int64_t Day9::part1() {
   IntCodeComputer intCodeComputer;
   return intCodeComputer.useProgram(this->parsedInput)
       .input({1})
@@ -29,10 +30,10 @@ int64_t Day5::part1() {
       .back();
 }
 
-int64_t Day5::part2() {
+int64_t Day9::part2() {
   IntCodeComputer intCodeComputer;
   return intCodeComputer.useProgram(this->parsedInput)
-      .input({5})
+      .input({2})
       .execute()
       .output()
       .back();
